@@ -1,17 +1,16 @@
-let numArr = []
-for (let i = 0; i < 10; i++) {
-    numArr[i] = Math.round(Math.random() * 100 - 50);
-}
-console.log('origsnal =>',numArr)
 
-for(let start = 0; start < numArr.length - 1; start++) {
-    for (let i = start + 1; i < numArr.length; i++) {
-        if (numArr[start] >= numArr[i] ) {
-            let temp = numArr[start]
-            numArr[start] = numArr[i]
-            numArr[i] = temp
+function sorting(arrayToSort) {
+    for (let j = 0; j < arrayToSort.length - 1; j++) {
+        for (let i = j + 1; i < arrayToSort.length; i++) {
+            if (arrayToSort[j] >= arrayToSort[i]) {
+                let temp = arrayToSort[j];
+                arrayToSort[j] = arrayToSort[i];
+                arrayToSort[i] = temp;
+            }
         }
     }
+    return arrayToSort;
 }
 
-console.log('sorted =>',numArr)
+const sortedarrayToSort = sorting([2, 5, 2, 1, -9]);
+console.log({ sortedarrayToSort });
